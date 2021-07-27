@@ -27,5 +27,5 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          oc login --token=${PROJECT_TOKEN} --server=https://api.sandbox.x8i5.p1.openshiftapps.com:6443 --insecure-skip-tls-verify
+          oc login --token=${{PROJECT_TOKEN}} --server=https://api.sandbox.x8i5.p1.openshiftapps.com:6443 --insecure-skip-tls-verify
           oc start-build citi-web --wait --follow
