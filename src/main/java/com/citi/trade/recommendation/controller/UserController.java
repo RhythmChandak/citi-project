@@ -1,0 +1,27 @@
+package com.citi.trade.recommendation.controller;
+
+import com.citi.trade.recommendation.model.UserMaster;
+import com.citi.trade.recommendation.service.UserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+
+@RequestMapping("/user")
+@RestController
+@CrossOrigin(origins = "https://www.citiproj.ml")
+public class UserController {
+
+    private static final Logger logger = LogManager.getLogger(UserController.class);
+
+    @Autowired
+    UserService userService;
+
+    @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public boolean userLogin(@RequestBody UserMaster userObject) {
+        // Checks if user present in database, if yes returns userId
+        logger.info("Authenticating User {} :", userObject.getUserId());
+        return userService.checkLogin(userObject) != null;
+    }
+}
