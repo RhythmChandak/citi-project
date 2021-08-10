@@ -13,7 +13,7 @@ import java.util.List;
 
 @RequestMapping("/stockDetails")
 @RestController
-@CrossOrigin(origins = "https://www.citiproj.ml")
+@CrossOrigin(origins = "http://localhost:4200")
 public class StockDetailsController {
 
     private static final Logger logger = LogManager.getLogger(StockDetailsController.class);
