@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/user")
 @RestController
-@CrossOrigin(origins = "https://www.citiproj.ml")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
     private static final Logger logger = LogManager.getLogger(UserController.class);

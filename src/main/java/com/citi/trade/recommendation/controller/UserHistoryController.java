@@ -15,7 +15,7 @@ import java.util.List;
 
 @RequestMapping("/userHistory")
 @RestController
-@CrossOrigin(origins = "https://www.citiproj.ml")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserHistoryController {
     private static final Logger logger = LogManager.getLogger(UserHistoryController.class);
 
